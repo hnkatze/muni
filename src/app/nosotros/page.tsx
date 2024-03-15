@@ -1,3 +1,8 @@
+import MunicipalidadInfo from "@/components/Histori";
+import Historia from "@/utilities/Historia.json";
+import { ArrowDownOutlined } from "@ant-design/icons";
+import { Button } from "@nextui-org/react";
+
 function Nosotros() {
   return (
     <>
@@ -18,19 +23,24 @@ function Nosotros() {
     Ser un municipio modelo de participación ciudadana y desarrollo comunal, reconocido por la excelencia en la gestión pública, con un personal altamente calificado, comprometido, amable y eficiente que trabaja en equipo para atender las necesidades de las personas y brindar soluciones innovadoras a la comunidad, construyendo un futuro próspero, sostenible y equitativo para todos.
      </p>
   </div>
-  <div className="flex justify-left pt-10">
-  <a href="/doc/Mision Y Vision.pdf" download>
-    <button className="bg-transparent hover:bg-gray-100 text-gray-700 font-bold py-2 px-4 rounded-full shadow-lg shadow-blue-500/50 flex items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-1m-4-4l2 2m0-2l-2-2" />
-      </svg>
-      <span className="ml-2">Descargar Misión y Visión</span>
-    </button>
-  </a>
+  <div className=" items-center p-0 ">
+      <h1 className="text-center text-gray-700 font-sans text-5xl dark:text-gray-400 pb-8">Historia de la Municipalidad</h1>
+      <MunicipalidadInfo historia={Historia .historia_municipalidad} />
+    </div>
+    <div className="flex justify-left gap-10 ">
+    <a href="/doc/Mision Y Vision.pdf" download>
+      
+    <Button color="primary" variant="ghost" startContent={<ArrowDownOutlined />}>
+                       <span className="ml-2">Descargar Misión y Visión</span>
+        </Button>
+    </a>
+    <a href="/doc/HISTORIA.pdf" download>
+    <Button color="primary" variant="ghost" startContent={<ArrowDownOutlined />}>
+            <span className="ml-2">Descargar Historia</span>
+        </Button>
+    </a>
 </div>
-
 </div>
-
 
     </>
   );

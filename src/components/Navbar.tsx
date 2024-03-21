@@ -10,8 +10,13 @@ export function NavBar(){
                <p className="font-normal text-inherit">BONITO ORIENTAL</p>
         </NavbarBrand>
         <NavbarContent className="flex gap-4" justify="end">
+        <NavbarItem>
+            <Link color="foreground" href="/">
+              Inicio
+            </Link>
+          </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/servicios">
               Servicios
             </Link>
           </NavbarItem>
@@ -21,7 +26,7 @@ export function NavBar(){
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/noticias">
               Noticias
             </Link>
           </NavbarItem>

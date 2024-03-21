@@ -1,70 +1,48 @@
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { DonutChart, Legend } from "@tremor/react";
+import React from "react";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+interface Datass {
+  name: string;
+  datos: number;
+}
 
 interface DoughnutChartProps {
-    labels: string[];
-    series: number[];
-    title: string;
-  }
-  
-  const Donut: React.FC<DoughnutChartProps> = ({ labels, series, title }) => {
-    const pastelColors = [
-        '#FFD700', '#FFA07A', '#FFB6C1', '#87CEEB', '#98FB98',
-        '#FF69B4', '#FFDAB9', '#FF6347', '#FFA500', '#FFC0CB',
-        '#DDA0DD', '#FF4500', '#FF8C00', '#FF1493', '#20B2AA'
-      ];
-    
-      // Genera colores aleatorios a partir de la paleta sin repetir
-      const getRandomColor = () => {
-        const randomIndex = Math.floor(Math.random() * pastelColors.length);
-        const color = pastelColors.splice(randomIndex, 1)[0];
-        return color;
-      };
-    
-      const backgroundColor = Array.from({ length: series.length }, getRandomColor);
-  const borderColor = '#fff0f2'; 
+  datas: Datass[];
+  title: string;
+}
 
-  const data = {
-    labels: labels,
-    datasets: [
-      {
-        data: series,
-        backgroundColor: backgroundColor,
-        borderColor: borderColor,
-        borderWidth: 1,
-      },
-    ],
-  };
+const Donut: React.FC<DoughnutChartProps> = ({ datas, title }) => {
+  const valueFormatter = (number: number) =>
+    ` ${Intl.NumberFormat('us').format(number).toString()}%`;
 
-  const options = {
-    plugins: {
-      tooltip: {
-        callbacks: {
-          label: function(context: { label: string; parsed: number; }) {
-            let label = context.label || '';
+  // Asegúrate de que esta transformación sea necesaria para tu componente DonutChart
+  const transformedData = datas.map(item => ({
+    ...item,
+    sales: item.datos, // Transforma 'datos' a 'sales' si es necesario
+  }));
 
-            if (label) {
-              label += ': ';
-            }
-            if (context.parsed) {
-              label += (context.parsed * 1).toFixed(0) + '%';
-            }
-            return label;
-          }
-        }
-      }
-    }
-  };
+  const legendNames = datas.map(data => data.name);
+
   return (
-    <div className=" flex flex-col w-[25vw]  h-[60vh]   justify-center ">
-        <h2 className='text-gray-700 text-lg uppercase -translate-x-5 pt-5 text-center'>{title}</h2>
-        <div className='w-[22vw] items-center'>
-        <Doughnut data={data} options={options} />
-        </div>
-      
+    <div className="flex flex-col w-[25vw] h-[60vh] justify-center">
+       <div className="h-16 flex justify-center items-center"> {/* Ajusta esta altura según sea necesario */}
+        <h2 className='text-gray-700 text-lg uppercase pt-5 text-center'>{title}</h2>
+      </div>
+      <div className='w-[25vw] flex flex-col items-center jusify-center h-96'>
+        <DonutChart
+          data={transformedData} // Asegúrate de pasar los datos transformados si es necesario
+          category="sales"
+          index="name"
+          valueFormatter={valueFormatter}
+          colors={['blue', 'cyan', 'indigo']}
+          className="w-40 h-52"
+        />
+        <Legend
+          categories={legendNames}
+          colors={['blue', 'cyan', 'indigo']}
+          className="h-14"
+        />
+      </div>
     </div>
   );
 };

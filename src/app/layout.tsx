@@ -5,6 +5,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { NavBar } from "@/components/Navbar";
 import { Fotter } from "@/components/Fotter";
+import Nav from "@/components/Nav";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={inter.className}>
-      <NavBar/>
+      {/* <NavBar/> */}
+      <Nav />
         <Providers>{children}</Providers>
         <br />
         <Fotter/>

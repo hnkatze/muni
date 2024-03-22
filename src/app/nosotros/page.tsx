@@ -1,4 +1,5 @@
 import MunicipalidadInfo from "@/components/Histori";
+import { History } from "@/components/history";
 import Historia from "@/utilities/Historia.json";
 import { ArrowDownOutlined } from "@ant-design/icons";
 import { Button } from "@nextui-org/react";
@@ -6,7 +7,8 @@ import { Button } from "@nextui-org/react";
 function Nosotros() {
   return (
     <>
-    <div className="w-full h-full flex flex-col items-center">
+    <History />
+    {/* <div className="w-full h-full flex flex-col items-center">
   <div className="mx-auto">
     <h1 className="text-justify text-gray-700 font-sans text-5xl dark:text-gray-400 pb-5">Misión</h1>
   </div>
@@ -40,7 +42,7 @@ function Nosotros() {
         </Button>
     </a>
 </div>
-</div>
+</div> */}
 
     </>
   );

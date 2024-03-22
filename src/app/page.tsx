@@ -1,6 +1,8 @@
-import { CardService } from "@/components/CardService";
+import { CardS } from "@/components/CardS";
 import Principal from "@/components/Principal";
-import Section from "@/components/Section";
+
+import { Section } from "@/components/section2";
+
 
 
 
@@ -8,7 +10,7 @@ import Section from "@/components/Section";
 export default function Home() {
   return (
   <>
-    <Principal imageUrl="/image/muni.png" title="Municipalidad De Bonito Oriental"/>
+    <Principal  title="Municipalidad De Bonito Oriental"/>
     <div className="flex flex-col items-center justify-center">
      <div className="flex gap-5 w-full justify-center">
     <Section
@@ -19,35 +21,47 @@ export default function Home() {
 
   </div>
   <p className="w-full text-center text-5xl font-normal pb-10 underline decoration-sky-300 ">Servicios</p>
-  <div className="flex gap-5 w-full justify-center">
-    <CardService
-      title="Tributacion"
+  <div className="flex flex-wrap gap-5 justify-center p-4 md:mx-0" >
+  <div className="w-3/4 p-2 md:w-1/4 lg:w-1/4">
+    <CardS
+      title="Tributación"
       content="Oficina encargada de la seguridad y que los derechos se respeten"
       imageUrl="/image/finance.jpg"
     />
-    <CardService
+  </div>
+  <div className="w-3/4 p-2 md:w-1/4 lg:w-1/4">
+    <CardS
       title="Justicia"
       content="Oficina encargada de llevar el progreso del municipio al siguiente nivel"
       imageUrl="/image/justice.png"
     />
-    <CardService
+  </div>
+  <div className="w-3/4 p-2 md:w-1/4 lg:w-1/4">
+    <CardS
       title="Catastro"
       content="Oficina encargada de la seguridad y que los derechos se respeten"
       imageUrl="/image/map.png"
     />
-    <CardService
+  </div>
+  <div className="w-3/4 p-2 md:w-1/4 lg:w-1/4">
+    <CardS
       title="Desarrollo Comunitario"
       content="Oficina encargada de llevar el progreso del municipio al siguiente nivel"
       imageUrl="/image/architecture.png"
     />
-    <CardService
-      title="Secretaria"
+  </div>
+  <div className="w-3/4 p-2 md:w-1/4 lg:w-1/4">
+    <CardS
+      title="Secretaría"
       content="Oficina encargada de llevar el progreso del municipio al siguiente nivel"
       imageUrl="/image/operator.png"
     />
   </div>
-  
 </div>
+
+
+  
+  </div>
 </>
   );
 }

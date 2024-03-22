@@ -1,35 +1,95 @@
-import Link from "next/link";
 
+import Link from "next/link"
 
-export const Fotter = () =>{
-    return(
-        <footer className="bg-blue-100 py-6 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center space-x-4 ">
-            <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
-              <h3 className="text-xl font-semibold mb-4">Enlaces</h3>
-              <ul>
-                <li className="mb-2"><Link href="/" className="text-blue-600 hover:text-blue-800">Inicio</Link></li>
-                <li className="mb-2"><Link href="/servicios" className="text-blue-600 hover:text-blue-800">Servicios</Link></li>
-                <li className="mb-2"><Link href="/nosotros" className="text-blue-600 hover:text-blue-800">Nosotros</Link></li>
-              </ul>
-            </div>
-            
-            <div className="w-full lg:w-1/2 px-4">
-              <h3 className="text-xl font-semibold mb-4">Contacto</h3>
-              <p className="mb-2">Dirección: Barrio Las Acacias</p>
-              <p className="mb-2">Teléfono: 2438-9111 </p>
-              <p className="mb-2">Email: municipalidadbonitooriental@gmail.com</p>
-            </div>
+export function Fotter() {
+  return (
+    <footer className="w-full border-t flex items-center justify-center">
+      <div className="container grid-inset  grid gap-6 py-12 md:grid-cols-2 md:py-16 lg:gap-10 lg:py-20 xl:gap-12">
+        <div className="flex items-center justify-center space-x-4">
+          <Link className="flex items-center space-x-2 font-semibold" href="#">
+            <FlagIcon className="h-6 w-6" />
+            <span className="text-lg font-bold tracking-tighter sm:text-xl md:text-2xl">Municipalidad Bonito Oriental</span>
+          </Link>
+        </div>
+        <div className="grid gap-2 text-sm">
+          <div className="space-y-1">
+            <Link className="font-medium" href="/">
+              Inicio
+            </Link>
           </div>
-        
-          <div className="m-full text-center">
-            <p className="text-gray-600">&copy; 2024 Ayuntamiento Municipal. Todos los derechos reservados.</p>
+          <div className="space-y-1">
+            <Link className="font-medium" href="/servicios">
+              Servicios
+            </Link>
+          </div>
+          <div className="space-y-1">
+            <Link className="font-medium" href="/nosotros">
+              Nosotros
+            </Link>
+          </div>
+          <div className="space-y-1">
+            <Link className="font-medium" href="/noticias">
+              Noticias
+            </Link>
+          </div>
+          <div className="space-y-1">
+            <Link className="font-medium" href="#">
+              Contact
+            </Link>
           </div>
         </div>
-      </footer>
-      
+        <div className="space-y-4 text-sm md:col-start-2 md:text-base lg:text-sm xl:text-base">
+          <div className="space-y-1">
+            <p className="inline font-medium">Calle Central Este</p>
+          </div>
+          <div className="space-y-1">
+            <p className="inline font-medium">municipalidadbonitoriental@gmail.com</p>
+          </div>
+          <div className="space-y-1">
+            <p className="inline font-medium">+504 2438-9111</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2 min-[400px]:flex-row justify-end text-xs tracking-wide md:text-sm lg:text-xs xl:text-sm">
+          <p className="text-gray-500 text-center sm:text-left dark:text-gray-400">
+            © 2023 Municipalidad Bonito Oriental. All rights reserved.
+          </p>
+          <div className="flex items-center justify-end gap-2 min-[400px]:gap-4">
+            <Link
+              className="font-medium hover:underline underline-offset-4 transition-colors text-gray-900 hover:text-gray-900/80 dark:text-gray-50 dark:hover:text-gray-50/80"
+              href="#"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              className="font-medium hover:underline underline-offset-4 transition-colors text-gray-900 hover:text-gray-900/80 dark:text-gray-50 dark:hover:text-gray-50/80"
+              href="#"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
 
 
-    );
+function FlagIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+      <line x1="4" x2="4" y1="22" y2="15" />
+    </svg>
+  )
 }

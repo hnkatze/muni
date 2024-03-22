@@ -1,4 +1,4 @@
-import { DonutChart, Legend } from "@tremor/react";
+import { DonutChart, EventProps, Legend } from "@tremor/react";
 import React from "react";
 
 interface Datass {
@@ -12,6 +12,7 @@ interface DoughnutChartProps {
 }
 
 const Donut: React.FC<DoughnutChartProps> = ({ datas, title }) => {
+  const [value, setValue] = React.useState<EventProps>(null);
   const valueFormatter = (number: number) =>
     ` ${Intl.NumberFormat('us').format(number).toString()}%`;
 
@@ -28,18 +29,20 @@ const Donut: React.FC<DoughnutChartProps> = ({ datas, title }) => {
        <div className="h-16 flex justify-center items-center"> {/* Ajusta esta altura según sea necesario */}
         <h2 className='text-gray-700 text-lg uppercase pt-5 text-center'>{title}</h2>
       </div>
-      <div className='w-[25vw] flex flex-col items-center jusify-center h-96'>
+      <div className='w-[25vw] flex flex-col items-center  jusify-center h-96'>
         <DonutChart
           data={transformedData} // Asegúrate de pasar los datos transformados si es necesario
           category="sales"
+          variant="donut"
+          onValueChange={(v) => setValue(v)}
           index="name"
           valueFormatter={valueFormatter}
-          colors={['blue', 'cyan', 'indigo']}
-          className="w-40 h-52"
+          colors={['blue', 'fuchsia', 'violet']}
+          className="w-40 h-52 text-black"
         />
         <Legend
           categories={legendNames}
-          colors={['blue', 'cyan', 'indigo']}
+          colors={['blue', 'fuchsia', 'violet']}
           className="h-14"
         />
       </div>

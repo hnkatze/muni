@@ -11,22 +11,14 @@ const config: Config = {
     './node_modules/@tremor/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    screens: {
-      '2xl': {'max': '1535px'},
-      // => @media (max-width: 1535px) { ... }
-
-      'xl': {'max': '1279px'},
-      // => @media (max-width: 1279px) { ... } 
-
-      'lg': {'max': '1023px'},
-      // => @media (max-width: 1023px) { ... }
-
-      'md': {'max': '767px'},
-      // => @media (max-width: 767px) { ... }
-
-      'sm': {'max': '639px'},
-      // => @media (max-width: 639px) { ... }
-    },
+    // Configuración "mobile-first" predeterminada de Tailwind CSS
+screens: {
+  'sm': '640px', // Aplica estilos para pantallas ≥ 640px
+  'md': '768px', // Aplica estilos para pantallas ≥ 768px
+  'lg': '1024px', // Aplica estilos para pantallas ≥ 1024px
+  'xl': '1280px', // Aplica estilos para pantallas ≥ 1280px
+  '2xl': '1536px', // Aplica estilos para pantallas ≥ 1536px
+},
     transparent: 'transparent',
     current: 'currentColor',
     extend: {
@@ -148,34 +140,8 @@ const config: Config = {
         /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
     },
   ],
-  plugins: [require('@headlessui/tailwindcss'), require('@tailwindcss/forms'),nextui()],
+  plugins: [require('@headlessui/tailwindcss'), require('@tailwindcss/forms'),nextui(), require("tailwindcss-animate")],
 
-  // theme: {
-    // screens: {
-    //   '2xl': {'max': '1535px'},
-    //   // => @media (max-width: 1535px) { ... }
-
-    //   'xl': {'max': '1279px'},
-    //   // => @media (max-width: 1279px) { ... } 
-
-    //   'lg': {'max': '1023px'},
-    //   // => @media (max-width: 1023px) { ... }
-
-    //   'md': {'max': '767px'},
-    //   // => @media (max-width: 767px) { ... }
-
-    //   'sm': {'max': '639px'},
-    //   // => @media (max-width: 639px) { ... }
-    // },
-  //   extend: {
-  //     backgroundImage: {
-  //       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-  //       "gradient-conic":
-  //         "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-  //     },
-  //   },
-  // },
-  // darkMode:"class",
-  // plugins: [nextui()],
+ 
 };
 export default config;

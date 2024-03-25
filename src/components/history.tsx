@@ -1,6 +1,8 @@
 import Image from "next/image"
 import BonitoMap from '@/components/Bonitomap.svg'
-
+import { Divider } from "@nextui-org/react"
+import MunicipalidadInfo from "./Histori"
+import Historia from "@/utilities/Historia.json";
 
 
 export function History() {
@@ -26,53 +28,26 @@ export function History() {
         </div>
       </div>
       <div className="w-full ">
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row md:pl-4 md:text-justify  md:pb-10 gap-8">
   <div className="space-y-2 flex-1">
-    <h2 className="text-3xl font-bold tracking-tighter">Our Mission</h2>
+    <h2 className="text-3xl font-bold tracking-tighter">Mision</h2>
     <p className="text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
-      We are on a mission to enable frontend developers to do their best work. We provide the platform and tools to help teams collaborate, iterate, and innovate, delivering the exceptional web experiences that users expect.
+    Ser una institución pública líder en la prestación de servicios de calidad con eficiencia, eficacia y transparencia a la población del municipio, promoviendo el bienestar individual y colectivo, el desarrollo integral y sostenible en el ámbito social, económico, cultural y ambiental, con un enfoque participativo e inclusivo que fomente la corresponsabilidad entre la ciudadanía y las autoridades.
     </p>
   </div>
   <div className="space-y-2 flex-1">
-    <h2 className="text-3xl font-bold tracking-tighter">Our Vision</h2>
+    <h2 className="text-3xl font-bold tracking-tighter">Vision</h2>
     <p className="text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
-      We envision a world where every website is a delightful experience. We believe in the power of the web to connect, inform, and inspire, and we are dedicated to making the frontend the most exciting and innovative part of the digital world.
+    Ser un municipio modelo de participación ciudadana y desarrollo comunal, reconocido por la excelencia en la gestión pública, con un personal altamente calificado, comprometido, amable y eficiente que trabaja en equipo para atender las necesidades de las personas y brindar soluciones innovadoras a la comunidad, construyendo un futuro próspero, sostenible y equitativo para todos.
     </p>
   </div>
 </div>
-
-        <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-3 lg:gap-12">
-            <div className="space-y-4 lg:col-span-2 lg:pr-12">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter">Our History</h2>
-                <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Since our founding in 2015, we've been on a mission to empower developers and organizations to
-                  innovate and build the best software. We started by creating a platform for deploying frontend code
-                  and have since expanded to offer a complete workflow for frontend development.
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-2">
-                 
-                  <div className="text-sm text-gray-500 dark:text-gray-400">2015: Vercel founded</div>
-                </div>
-                <div className="flex items-center space-x-2">
-                 
-                  <div className="text-sm text-gray-500 dark:text-gray-400">2016: Next.js launched</div>
-                </div>
-                <div className="flex items-center space-x-2">
-                 
-                  <div className="text-sm text-gray-500 dark:text-gray-400">2018: Now platform introduced</div>
-                </div>
-                <div className="flex items-center space-x-2">
-                 
-                  <div className="text-sm text-gray-500 dark:text-gray-400">2020: Vercel for GitHub launched</div>
-                </div>
-              </div>
-            </div>
-           
-          </div>
+<Divider/>
+<div className="pb-20"></div>
+        
+                   <div className=" flex flex-col w-full justify-center items-center">
+      <h1 className="text-3xl font-bold tracking-tighter">Historia de la Municipalidad</h1>
+      <MunicipalidadInfo historia={Historia .historia_municipalidad} />
         </div>
       </div>
     </>

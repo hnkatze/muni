@@ -16,7 +16,7 @@ interface MunicipalidadInfoProps {
 
 const MunicipalidadInfo: React.FC<MunicipalidadInfoProps> = ({ historia }) => {
   return (
-    <div className="w-[35rem] text-justify text-gray-500  font-sans">
+    <div className="w-[35rem] text-justify text-gray-600  font-sans">
       {historia.map((evento, index) => (
         <div key={index} className="mb-2">
           <h2 className="text-2xl font-bold mb-4">{evento.fecha}</h2>

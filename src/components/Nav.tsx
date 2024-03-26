@@ -6,7 +6,7 @@ import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
 export default function Nav() {
   return (
     <header className="flex items-center h-14 px-4 w-full md:px-6 lg:justify-between lg:place-content-around lg:h-20">
-      <Link className="mr-6" href="#">
+      <Link className="mr-6" href="/">
         <MountainIcon  />
         <span className="sr-only">Bonito Oriental</span>
       </Link>

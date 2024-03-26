@@ -1,8 +1,9 @@
 import Image from "next/image"
 import BonitoMap from '@/components/Bonitomap.svg'
-import { Divider } from "@nextui-org/react"
+import { Button, Divider } from "@nextui-org/react"
 import MunicipalidadInfo from "./Histori"
 import Historia from "@/utilities/Historia.json";
+import { ArrowDownOutlined } from "@ant-design/icons";
 
 
 export function History() {
@@ -19,16 +20,16 @@ export function History() {
             </div>
             <Image
               alt="About"
-              className="mx-auto  overflow-hidden aspect-auto object-contain object-center   w-full sm:w-[200px]"
-              height="200"
+              className="mx-auto  overflow-hidden aspect-auto object-contain object-center   w-2/4 md:w-[200px]"
+              height="150"
               src={BonitoMap}
-              width="200"
+              width="150"
             />
           </div> 
         </div>
       </div>
       <div className="w-full ">
-      <div className="flex flex-col md:flex-row md:pl-4 md:text-justify  md:pb-10 gap-8">
+      <div className="flex flex-col md:flex-row md:pl-4 md:text-justify  md:pb-10 md:pr-4 gap-8">
   <div className="space-y-2 flex-1">
     <h2 className="text-3xl font-bold tracking-tighter">Mision</h2>
     <p className="text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
@@ -42,14 +43,20 @@ export function History() {
     </p>
   </div>
 </div>
-<Divider/>
-<div className="pb-20"></div>
-        
-                   <div className=" flex flex-col w-full justify-center items-center">
-      <h1 className="text-3xl font-bold tracking-tighter">Historia de la Municipalidad</h1>
-      <MunicipalidadInfo historia={Historia .historia_municipalidad} />
-        </div>
       </div>
+      <div className="flex justify-center gap-10 ">
+    <a href="/doc/Mision Y Vision.pdf" download>
+      
+    <Button color="primary" variant="ghost" startContent={<ArrowDownOutlined />}>
+                       <span className="ml-2">Descargar Misión y Visión</span>
+        </Button>
+    </a>
+    <a href="/doc/HISTORIA.pdf" download>
+    <Button color="primary" variant="ghost" startContent={<ArrowDownOutlined />}>
+            <span className="ml-2">Descargar Historia</span>
+        </Button>
+    </a>
+</div>
     </>
   )
 }

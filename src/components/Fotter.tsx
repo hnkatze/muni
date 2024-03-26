@@ -40,7 +40,7 @@ export function Fotter() {
         </div>
         <div className="space-y-4 text-sm md:col-start-2 md:text-base lg:text-sm xl:text-base">
           <div className="space-y-1">
-            <p className="inline font-medium">Calle Central Este</p>
+            <p className="inline font-medium">Calle Central Este, Barrio Las Acasias</p>
           </div>
           <div className="space-y-1">
             <p className="inline font-medium">municipalidadbonitoriental@gmail.com</p>

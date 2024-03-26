@@ -1,6 +1,5 @@
 import { CardS } from "@/components/CardS";
 import Principal from "@/components/Principal";
-
 import { Section } from "@/components/section2";
 
 
@@ -10,6 +9,7 @@ import { Section } from "@/components/section2";
 export default function Home() {
   return (
   <>
+
     <Principal  title="Municipalidad De Bonito Oriental"/>
     <div className="flex flex-col items-center justify-center">
      <div className="flex gap-5 w-full justify-center">

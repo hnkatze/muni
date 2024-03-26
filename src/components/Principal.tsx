@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Princ from '@/components/muni.png'
 interface PrincipalProps {
-  imageUrl: string;
+
   title: string;
 
 }

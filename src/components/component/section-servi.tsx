@@ -1,5 +1,6 @@
 import { ArrowDownOutlined } from "@ant-design/icons";
 import { Button } from "@nextui-org/react";
+import Image from "next/image";
 import React from "react";
 
 interface ButtonProp {
@@ -26,12 +27,12 @@ export const SectionServi: React.FC<SectionProps> = ({
     <section className="w-full py-6 md:py-12">
       <div className="container flex flex-col items-center px-4 space-y-4 md:px-6">
         <div className="grid max-w-[1300px] mx-auto items-center w-full gap-4 px-4 sm:px-6 md:gap-16 md:grid-cols-2">
-          <img
+          <Image
             alt="Productivity Image"
             className="mx-auto aspect-[4/3] overflow-hidden rounded-lg object-contain"
-            height="200"
+            height={200}
             src={imageUrl}
-            width="300"
+            width={300}
           />
           <div className="flex flex-col items-center space-y-2 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{title}</h2>

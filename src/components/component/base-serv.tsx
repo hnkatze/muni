@@ -1,5 +1,6 @@
 
 import Link from "next/link"
+import { SVGProps } from "react"
 
 export function BaseServ() {
   return (
@@ -80,7 +81,7 @@ export function BaseServ() {
 }
 
 
-function MountainIcon(props) {
+function MountainIcon(props:SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

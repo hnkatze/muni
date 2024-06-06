@@ -2,46 +2,28 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/react";
 
 export default function Nav() {
   return (
     <header className="flex items-center h-14 px-4 w-full md:px-6 lg:justify-between lg:place-content-around lg:h-20">
       <Link className="mr-6" href="/">
-          <span className="sr-only">Bonito Oriental</span>
+        <span className="sr-only">Bonito Oriental</span>
       </Link>
       <nav className="hidden space-x-4 lg:flex flex-1 min-w-0 items-center">
         <Link className="font-medium" href="/">
           Inicio
         </Link>
-        <Dropdown>
-          <DropdownTrigger>
-            <button className="bg-transparent   py-2 px-4 rounded  items-center ">
-              Servicios
-            </button>
-          </DropdownTrigger>
-          <DropdownMenu
-            aria-label="Example with disabled actions"
-              >
-            <DropdownItem key="new"><Link className="font-medium" href="/servicios/secretaria" passHref legacyBehavior>
-              <a> Secretaria</a>
-            </Link></DropdownItem>
-            <DropdownItem key="copy"><Link className="font-medium" href="/servicios/catastro">
-             Catastro
-            </Link></DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-
+        <Link className="font-medium" href="/servicios">
+          Servicios{" "}
+        </Link>
         <Link className="font-medium" href="/nosotros">
           Nosotros
         </Link>
-        <Link className="font-medium" href="/noticias">
-          Noticias
+        <Link className="font-medium" href="/portal">
+          Portal
+        </Link>
+        <Link className="font-medium" href="/contact">
+          Contacto
         </Link>
       </nav>
       <Sheet>
@@ -62,8 +44,11 @@ export default function Nav() {
             <Link className="font-medium" href="/nosotros">
               Nosotros
             </Link>
-            <Link className="font-medium" href="/noticias">
-              Noticias
+            <Link className="font-medium" href="/portal">
+              Portal
+            </Link>
+            <Link className="font-medium" href="/contact">
+              Contacto
             </Link>
           </nav>
         </SheetContent>
@@ -92,4 +77,3 @@ function MenuIcon() {
     </svg>
   );
 }
-

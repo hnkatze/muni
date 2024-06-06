@@ -21,7 +21,7 @@ function Catastro() {
   return (
     <main
       id="liz"
-      className="grid gap-4 px-4 text-center md:gap-10 md:px-6 lg:gap-16"
+      className="grid gap-4 px-4 text-center w-full md:gap-10 md:px-6 lg:gap-16"
     >
       <div className=" flex flex-col md:flex-row md:pl-28 md:gap-2">
         <div className="space-y-2 md:pt-20">
@@ -43,8 +43,8 @@ function Catastro() {
           width="600"
         />
       </div>
-      <div className="mx-auto flex  justify-center  gap-16 content-around">
-        <div className="space-y-4 w-1/4">
+      <div className="mx-auto flex flex-col  justify-center  gap-16 content-around md:flex-row">
+        <div className="space-y-4 w-4/5 text-justify md:w-1/4">
           <h2 className="text-2xl font-bold md:text-blue-400 tracking-tighter sm:text-3xl md:text-4xl/none">
             Registro y Actualización Catastral
           </h2>
@@ -55,7 +55,7 @@ function Catastro() {
             precisa y confiable que soporte la gestión territorial.
           </p>
         </div>
-        <div className="space-y-4 w-1/4">
+        <div className="space-y-4 w-4/5 text-justify md:w-1/4">
           <h2 className="text-2xl font-bold md:text-blue-400 tracking-tighter sm:text-3xl md:text-4xl/none">
             Valoración Catastral
           </h2>
@@ -66,7 +66,7 @@ function Catastro() {
             propiedad inmueble, promoviendo la equidad fiscal.
           </p>
         </div>
-        <div className="space-y-4 w-1/4">
+        <div className="space-y-4 w-4/5 text-justify md:w-1/4">
           <h2 className="text-2xl font-bold tracking-tighter md:text-blue-400 sm:text-3xl md:text-4xl/none">
             Soporte para la Planificación Urbana y Territorial
           </h2>

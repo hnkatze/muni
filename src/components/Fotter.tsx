@@ -1,5 +1,6 @@
 
 import Link from "next/link"
+import { SVGProps } from "react"
 
 export function Fotter() {
   return (
@@ -28,13 +29,13 @@ export function Fotter() {
             </Link>
           </div>
           <div className="space-y-1">
-            <Link className="font-medium" href="/noticias">
-              Noticias
+            <Link className="font-medium" href="/portal">
+              Portal
             </Link>
           </div>
           <div className="space-y-1">
-            <Link className="font-medium" href="#">
-              Contact
+            <Link className="font-medium" href="/contact">
+              Contacto
             </Link>
           </div>
         </div>
@@ -53,7 +54,7 @@ export function Fotter() {
           <p className="text-gray-500 text-center sm:text-left dark:text-gray-400">
             © 2023 Municipalidad Bonito Oriental. All rights reserved.
           </p>
-          <div className="flex items-center justify-end gap-2 min-[400px]:gap-4">
+          {/* <div className="flex items-center justify-end gap-2 min-[400px]:gap-4">
             <Link
               className="font-medium hover:underline underline-offset-4 transition-colors text-gray-900 hover:text-gray-900/80 dark:text-gray-50 dark:hover:text-gray-50/80"
               href="#"
@@ -66,7 +67,7 @@ export function Fotter() {
             >
               Terms & Conditions
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
@@ -74,7 +75,7 @@ export function Fotter() {
 }
 
 
-function FlagIcon(props) {
+function FlagIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

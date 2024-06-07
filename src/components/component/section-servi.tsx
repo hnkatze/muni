@@ -1,6 +1,6 @@
 import { ArrowDownOutlined } from "@ant-design/icons";
 import { Button } from "@nextui-org/react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 interface ButtonProp {
@@ -9,7 +9,7 @@ interface ButtonProp {
 }
 
 interface SectionProps {
-  imageUrl: string;
+  imageUrl: StaticImageData;
   title: string;
   content: string;
   buttonProps: ButtonProp[];
@@ -41,7 +41,7 @@ export const SectionServi: React.FC<SectionProps> = ({
             </p>
             <div className="flex flex-col max-w-sm items-center w-full gap-2 min-[400px]:max-w-md grid-cols-1 md:gap-4 md:grid-cols-2">
               <div><h2 className="text-xl font-bold">Descargue Requisitos De:</h2></div>
-              <div className="flex gap-5">
+              <div className="flex flex-col md:flex-row gap-2 md:gap-5">
               {buttonProps.map((button, index) => ( 
                 <a key={index} href={button.linkDes} download> 
                

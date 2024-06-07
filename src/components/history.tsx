@@ -31,8 +31,8 @@ export function History() {
       <div className="w-full ">
         <div className="flex flex-col md:flex-row md:pl-4 md:text-justify  md:pb-10 md:pr-4 gap-8">
           <div className="space-y-2 flex-1">
-            <h2 className="text-3xl font-bold tracking-tighter">Mision</h2>
-            <p className="text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
+            <h2 className="text-3xl font-bold text-center md:text-start tracking-tighter">Mision</h2>
+            <p className="text-gray-500 md:text-xl lg:text-base xl:text-xl text-center dark:text-gray-400">
               Ser una institución pública líder en la prestación de servicios de
               calidad con eficiencia, eficacia y transparencia a la población
               del municipio, promoviendo el bienestar individual y colectivo, el
@@ -43,8 +43,8 @@ export function History() {
             </p>
           </div>
           <div className="space-y-2 flex-1">
-            <h2 className="text-3xl font-bold tracking-tighter">Vision</h2>
-            <p className="text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400">
+            <h2 className="text-3xl font-bold tracking-tighter text-center md:text-start">Vision</h2>
+            <p className="text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400 text-center">
               Ser un municipio modelo de participación ciudadana y desarrollo
               comunal, reconocido por la excelencia en la gestión pública, con
               un personal altamente calificado, comprometido, amable y eficiente
@@ -55,7 +55,7 @@ export function History() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center gap-10 ">
+      <div className="flex flex-col  md:w-full md:flex-row justify-center items-center pt-5 gap-10 ">
         <a href="/doc/Mision Y Vision.pdf" download>
           <Button
             color="primary"

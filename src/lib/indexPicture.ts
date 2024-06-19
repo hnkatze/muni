@@ -31,6 +31,8 @@ import centro3 from '../image/centro/3.jpg'
 import centro4 from '../image/centro/4.jpg'
 import centro5 from '../image/centro/5.jpg'
 
+
+
 export const calles = [
     { src: i1, alt: '1' },
     { src: i2, alt: '2' },
@@ -71,4 +73,5 @@ export const cerco = [
     { src: centro4, alt: '4' },
     { src: centro5, alt: '5' },
   ];
+  
   

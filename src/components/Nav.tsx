@@ -30,6 +30,9 @@ export default function Nav() {
       <Link className="font-medium" href="/contact">
         Contacto
       </Link>
+      <Link className="font-medium" href="/recursos">
+        Recursos
+      </Link>
     </nav>
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
@@ -54,6 +57,9 @@ export default function Nav() {
           </Link>
           <Link className="font-medium" href="/contact" onClick={closeMenu}>
             Contacto
+          </Link>
+          <Link className="font-medium" href="/recursos" onClick={closeMenu}>
+            Recursos
           </Link>
         </nav>
       </SheetContent>

@@ -3,22 +3,7 @@ import CardH from "@/components/CardH";
 
 
 export default function Procer(){
-  const heroes = [
-    { id: 1, name: 'Dionisio de Herrera' },
-    { id: 2, name: 'Jose Trinidad Cabañas' },
-    { id: 3, name: 'Cacique Lempira' },
-    { id: 4, name: 'Gral. Francisco Morazan' },
-    { id: 5, name: 'Jose Trinidad Reyes' },
-    { id: 6, name: 'Jose Cecilio del Valle' },
-    { id: 7, name: 'Bandera Nacional' },
-    { id: 8, name: 'Venado Cola Blanca' },
-    { id: 9, name: 'Escudo Nacional' },
-    { id: 10, name: 'Guacamaya' },
-    { id: 11, name: 'Orquidea Brassavola' },
-    { id: 12, name: 'Pino' },
-    { id: 13, name: 'Guacamaya Animada' },
-    { id: 14, name: 'Peque. Guacamaya' },
-];
+
 
 
   return (

@@ -1,17 +1,9 @@
-"use client";
+
 import CardH from "@/components/CardH";
 import { billetes, heroes } from "@/lib/utils";
 
-<<<<<<< HEAD
-
-
 export default function Procer(){
 
-
-
-=======
-export default function Procer() {
->>>>>>> 8d29574db3cf48e552e801dec0085bfb2593caf2
   return (
     <div className="flex flex-col h-full w-full justify-center items-center">
       <h2 className="p-9 md:p-14 text-2xl md:text-5xl text-center uppercase underline">

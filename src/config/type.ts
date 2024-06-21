@@ -8,3 +8,9 @@ interface Proyecto {
   zonas: string;
   enlace: string;
 }
+interface ContactData {
+  name: string;
+  email: string;
+  message: string;
+  subject: string;
+}

@@ -5,6 +5,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import handlerMail from "@/api/contact";
+import { handleSubtmitContactForm } from "@/config/someFunctions";
+import { createContact } from "@/config/crude";
+import { toast } from "react-toastify";
 
 export default function Component() {
   const [formData, setFormData] = useState({
@@ -22,16 +25,20 @@ export default function Component() {
       [e.target.name]: e.target.value,
     });
   };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+//create a function to handle the submit of the form directi to crude function
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const success = await handlerMail(formData);
-
-    if (success) {
-      alert("Listo, Nos Pondremos En Contacto Contigo Pronto.");
-    } else {
-      alert("Parece que hubo un error, por favor intenta de nuevo más tarde.");
-    }
+  await createContact(formData).then(() => {
+    toast.success("Listo, Nos Pondremos En Contacto Contigo Pronto.");
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      subject: "",
+    });
+  }
+  
+  );
   };
   return (
     <div className='w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-20 lg:py-24'>
@@ -46,8 +53,8 @@ export default function Component() {
               formulario a continuación o contáctanos directamente.
             </p>
           </div>
-          <form className='space-y-4 text-white' onSubmit={handleSubmit}>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-white'>
+          <form className='space-y-4 ' onSubmit={handleSubmit}>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 '>
               <div>
                 <Label htmlFor='name'>Nombre</Label>
                 <Input

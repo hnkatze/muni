@@ -14,3 +14,10 @@ interface ContactData {
   message: string;
   subject: string;
 }
+interface ContactDataWithId {
+  name: string;
+  email: string;
+  message: string;
+  subject: string;
+  id: string;
+}

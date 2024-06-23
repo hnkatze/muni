@@ -4,8 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import handlerMail from "@/api/contact";
-import { handleSubtmitContactForm } from "@/config/someFunctions";
 import { createContact } from "@/config/crude";
 import { toast } from "react-toastify";
 
@@ -25,20 +23,18 @@ export default function Component() {
       [e.target.name]: e.target.value,
     });
   };
-//create a function to handle the submit of the form directi to crude function
+  //create a function to handle the submit of the form directi to crude function
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  await createContact(formData).then(() => {
-    toast.success("Listo, Nos Pondremos En Contacto Contigo Pronto.");
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      subject: "",
+    await createContact(formData).then(() => {
+      toast.success("Listo, Nos Pondremos En Contacto Contigo Pronto.");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+        subject: "",
+      });
     });
-  }
-  
-  );
   };
   return (
     <div className='w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-20 lg:py-24'>
@@ -64,6 +60,7 @@ export default function Component() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder='Ingresa tu nombre'
+                  className='dark:bg-white dark:text-gray-900'
                 />
               </div>
               <div>
@@ -76,6 +73,7 @@ export default function Component() {
                   onChange={handleChange}
                   type='email'
                   placeholder='Ingresa tu correo electrónico'
+                  className='dark:bg-white dark:text-gray-900'
                 />
               </div>
             </div>
@@ -88,6 +86,7 @@ export default function Component() {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder='Ingresa el asunto'
+                className='dark:bg-white dark:text-gray-900'
               />
             </div>
             <div>
@@ -99,7 +98,7 @@ export default function Component() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder='Ingresa tu mensaje'
-                className='min-h-[150px]'
+                className='min-h-[150px] dark:bg-white dark:text-gray-900'
               />
             </div>
             <Button type='submit'>Enviar Mensaje</Button>

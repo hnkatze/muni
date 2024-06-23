@@ -3,6 +3,8 @@ import { Data, firebaseStorage } from "./firebase";
 import {
   addDoc,
   collection,
+  deleteDoc,
+  doc,
   DocumentData,
   getDocs,
   QueryDocumentSnapshot,
@@ -19,10 +21,9 @@ export const getUrl = async (folder: string): Promise<IHero[]> => {
   return Promise.all(urls);
 };
 
-
 //create a function to create a new ContactData in the database
 export const createContact = async (contact: ContactData): Promise<void> => {
-try {
+  try {
     const docRef = await addDoc(collection(Data, "contacts"), contact);
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
@@ -37,7 +38,7 @@ export const getContacts = async (): Promise<ContactDataWithId[]> => {
     const querySnapshot = await getDocs(collection(Data, "contacts"));
     const contacts: ContactDataWithId[] = [];
     querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
-      const data = doc.data() as ContactData; 
+      const data = doc.data() as ContactData;
       contacts.push({ id: doc.id, ...data });
     });
     return contacts;
@@ -46,4 +47,13 @@ export const getContacts = async (): Promise<ContactDataWithId[]> => {
     throw error;
   }
 };
- 
+
+// create a function to delete a ContactData in the database
+export const deleteContact = async (id: string): Promise<void> => {
+  try {
+    await deleteDoc(doc(Data, "contacts", id));
+  } catch (error) {
+    console.error("Error removing document: ", error);
+    throw error;
+  }
+};

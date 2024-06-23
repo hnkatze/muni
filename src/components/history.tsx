@@ -35,7 +35,7 @@ export function History() {
             <h2 className='text-3xl font-bold text-center md:text-start tracking-tighter'>
               Mision
             </h2>
-            <p className='text-gray-500 md:text-xl lg:text-base xl:text-xl text-center dark:text-gray-400'>
+            <p className='text-gray-500 md:text-xl lg:text-base xl:text-xl text-justify dark:text-gray-400'>
               Ser una institución pública líder en la prestación de servicios de
               calidad con eficiencia, eficacia y transparencia a la población
               del municipio, promoviendo el bienestar individual y colectivo, el
@@ -49,7 +49,7 @@ export function History() {
             <h2 className='text-3xl font-bold tracking-tighter text-center md:text-start'>
               Vision
             </h2>
-            <p className='text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400 text-center'>
+            <p className='text-gray-500 md:text-xl lg:text-base xl:text-xl dark:text-gray-400 text-justify'>
               Ser un municipio modelo de participación ciudadana y desarrollo
               comunal, reconocido por la excelencia en la gestión pública, con
               un personal altamente calificado, comprometido, amable y eficiente

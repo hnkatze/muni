@@ -27,7 +27,7 @@ export default function CardProyectos() {
           <Divider />
           <CardFooter>
             <Link isExternal showAnchorIcon href={proyecto.enlace}>
-              Galleria Aqui!!
+              Ver Aqui!!
             </Link>
           </CardFooter>
         </Card>

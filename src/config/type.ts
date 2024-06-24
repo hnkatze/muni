@@ -21,3 +21,16 @@ interface ContactDataWithId {
   subject: string;
   id: string;
 }
+interface IPostId {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  zonas: string;
+  enlace: string;
+}
+interface IPost {
+  titulo: string;
+  descripcion: string;
+  zonas: string;
+  enlace: string;
+}

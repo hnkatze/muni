@@ -57,3 +57,40 @@ export const deleteContact = async (id: string): Promise<void> => {
     throw error;
   }
 };
+
+//create a function to create a new IPost in the database
+export const createPost = async (post: Proyecto): Promise<void> => {
+  try {
+    const docRef = await addDoc(collection(Data, "posts"), post);
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+    throw e;
+  }
+};
+
+//create a function to get all the IPost in the database inluding the id
+export const getPosts = async (): Promise<IPostId[]> => {
+  try {
+    const querySnapshot = await getDocs(collection(Data, "posts"));
+    const posts: IPostId[] = [];
+    querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
+      const data = doc.data() as Proyecto;
+      posts.push({ id: doc.id, ...data });
+    });
+    return posts;
+  } catch (error) {
+    console.error("Error getting documents: ", error);
+    throw error;
+  }
+};
+
+// create a function to delete a IPost in the database
+export const deletePost = async (id: string): Promise<void> => {
+  try {
+    await deleteDoc(doc(Data, "posts", id));
+  } catch (error) {
+    console.error("Error removing document: ", error);
+    throw error;
+  }
+};

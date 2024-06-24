@@ -24,10 +24,8 @@ export const getUrl = async (folder: string): Promise<IHero[]> => {
 //create a function to create a new ContactData in the database
 export const createContact = async (contact: ContactData): Promise<void> => {
   try {
-    const docRef = await addDoc(collection(Data, "contacts"), contact);
-    console.log("Document written with ID: ", docRef.id);
+await addDoc(collection(Data, "contacts"), contact);
   } catch (e) {
-    console.error("Error adding document: ", e);
     throw e;
   }
 };
@@ -61,10 +59,8 @@ export const deleteContact = async (id: string): Promise<void> => {
 //create a function to create a new IPost in the database
 export const createPost = async (post: Proyecto): Promise<void> => {
   try {
-    const docRef = await addDoc(collection(Data, "posts"), post);
-    console.log("Document written with ID: ", docRef.id);
+  await addDoc(collection(Data, "posts"), post);
   } catch (e) {
-    console.error("Error adding document: ", e);
     throw e;
   }
 };

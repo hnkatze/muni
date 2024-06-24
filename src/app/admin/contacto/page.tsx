@@ -1,9 +1,8 @@
 "use client";
 import CardContacs from "@/components/CardContacs";
 import ModalCreateIPost from "@/components/component/ModalCreateIPost";
-import { useAuthStore } from "@/config/authStoreProvider";
+import { getUser } from "@/config/authStoreProvider";
 import { deleteContact, getContacts } from "@/config/crude";
-import { Modal } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -11,7 +10,8 @@ import { toast } from "react-toastify";
 export default function Contacto() {
   const [contacts, setContacts] = useState<ContactDataWithId[]>([]);
   const router = useRouter();
-  const user = useAuthStore((state) => state.user);
+  const user = getUser();
+  
   useEffect(() => {
     if (!user) {
       router.push("/admin");
@@ -29,6 +29,7 @@ export default function Contacto() {
     setContacts(newContacts);
     toast.success("Solicitud eliminada");
   };
+
   return (
     <main>
       <div className="text-center my-11 gap-1">

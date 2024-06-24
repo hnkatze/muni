@@ -1,4 +1,5 @@
-"use client";
+// Code: ModalCreateIPost Component
+'use client';
 import {
   Button,
   Modal,
@@ -12,6 +13,7 @@ import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { toast } from "react-toastify";
+import { createPost } from "@/config/crude";
 
 export default function ModalCreateIPost() {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -25,9 +27,9 @@ export default function ModalCreateIPost() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const createPost = async (form: IPost): Promise<void> => {
+  const createPosts = async (e: React.FormEvent) => {
     try {
-      console.log(form);
+      e.preventDefault();
       await createPost(form).then(() => {
         toast.success("Proyecto agregado");
         setForm({ titulo: "", descripcion: "", zonas: "", enlace: "" });
@@ -46,7 +48,7 @@ export default function ModalCreateIPost() {
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
-            <>
+            <form onSubmit={createPosts}>
               <ModalHeader className="flex flex-col gap-1">
                 Nuevo Proyecto
               </ModalHeader>
@@ -82,11 +84,11 @@ export default function ModalCreateIPost() {
                 <Button color="danger" variant="flat" onPress={onClose}>
                   Cerrar
                 </Button>
-                <Button color="primary" onPress={() => createPost}>
+                <Button color="primary" type="submit">
                   Agregar
                 </Button>
               </ModalFooter>
-            </>
+            </form>
           )}
         </ModalContent>
       </Modal>

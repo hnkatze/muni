@@ -1,4 +1,4 @@
-import create, { StateCreator } from "zustand";
+import { create ,StateCreator } from "zustand";
 import { persist, PersistOptions } from "zustand/middleware";
 
 interface AuthStore {
@@ -24,3 +24,6 @@ export const useAuthStore = create<AuthStore>(
         }
     )
 );
+
+//get a user from the store
+export const getUser = () => useAuthStore.getState().user;

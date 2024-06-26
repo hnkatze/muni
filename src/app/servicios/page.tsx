@@ -1,50 +1,45 @@
 import architecture from "@/image/servicios/architecture.png";
+import catas from "@/image/servicios/map.png";
 import ope from "@/image/servicios/operator.png";
+import tribu from "@/image/servicios/finance.jpg"
+import justice from "@/image/servicios/justice.png";
 
 import { SectionServi } from "@/components/component/section-servi";
-const buttonPropsExample = [
-  {
-    title: "Matrimonio",
-    linkDes: "/doc/matri.pdf",
-  },
-  {
-    title: "Download DOCX",
-    linkDes: "https://example.com/document2.docx",
-  },
-  {
-    title: "Download PPT",
-    linkDes: "https://example.com/presentation.ppt",
-  },
-];
-const buttonPropsExample2 = [
-  {
-    title: "Dominio Pleno",
-    linkDes: "https://example.com/document1.pdf",
-  },
-  {
-    title: "Escriturado",
-    linkDes: "https://example.com/document2.docx",
-  },
-  {
-    title: "Intereses",
-    linkDes: "https://example.com/presentation.ppt",
-  },
-];
+import { Catastro, Justicia, Secretaria, Tributacion } from "./Indice";
+
 
 function Servicios() {
   return (
     <>
-      <SectionServi
-        buttonProps={buttonPropsExample}
+    <SectionServi
+        servicios={Secretaria}
         title='Secretaria'
         content='Esta oficina se encarga de las gestiones directas con el alcalde y todo lo relacionado con la administracion de la municipalidad.'
         imageUrl={ope}
       />
       <SectionServi
-        buttonProps={buttonPropsExample2}
+        servicios={Tributacion}
+        title='Tributacion'
+        content='Oficina encargada de la gestión de impuestos y tributos en el municipio.'
+        imageUrl={tribu}
+      />
+      <SectionServi
+        servicios={Catastro}
         title='Catastro'
         content='Oficina encargada con lo relacionado con los bienes y muebles(Pagos, gestiones de dominios plenos, impuestos).'
+        imageUrl={catas}
+      />
+        {/* <SectionServi
+        servicios={REQUISITOS_PARA_DESARROLLO_COMUNITARIO}
+        title='Desarrollo Comunitario'
+        content='Oficina encargada del desarrollo y bienestar comunitario en el municipio.'
         imageUrl={architecture}
+      /> */}
+       <SectionServi
+        servicios={Justicia}
+        title='Justicia'
+        content='Oficina encargada de los trámites legales y judiciales dentro del municipio.'
+        imageUrl={justice}
       />
     </>
   );

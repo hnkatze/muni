@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { createContact } from "./crude";
+import { createContact, getContactsPrisma } from "./crude";
 
 export async function  handleSubtmitContactForm(data: ContactData) {
     try {
@@ -15,7 +15,7 @@ export async function  handleSubtmitContactForm(data: ContactData) {
 
 export async function getContacts (): Promise<ContactDataWithId[]> {
     try {
-       const contacts = await getContacts();
+       const contacts = await getContactsPrisma();
        return contacts;
     } catch (error) {
         console.error("Error getting documents: ", error);

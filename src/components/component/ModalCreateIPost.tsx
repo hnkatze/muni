@@ -1,5 +1,5 @@
 // Code: ModalCreateIPost Component
-'use client';
+"use client";
 import {
   Button,
   Modal,
@@ -12,8 +12,7 @@ import {
 import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { toast } from "react-toastify";
-import { createPost } from "@/config/crude";
+import { v4 as uuid } from "uuid";
 
 export default function ModalCreateIPost() {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -26,17 +25,31 @@ export default function ModalCreateIPost() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
 
-  const createPosts = async (e: React.FormEvent) => {
     try {
-      e.preventDefault();
-      await createPost(form).then(() => {
-        toast.success("Proyecto agregado");
-        setForm({ titulo: "", descripcion: "", zonas: "", enlace: "" });
-        onClose();
+      const id = uuid();
+      const response = await fetch("/api/post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: id,
+          titulo: form.titulo,
+          descripcion: form.descripcion,
+          zonas: form.zonas,
+          enlace: form.enlace,
+        }),
       });
+      const result = await response.json();
+
+      if (!result.ok) {
+        onClose();
+      }
     } catch (error) {
-      toast.error("Error adding document");
+      console.error("Error updating data:", error);
     }
   };
 
@@ -48,7 +61,7 @@ export default function ModalCreateIPost() {
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
-            <form onSubmit={createPosts}>
+            <form onSubmit={handleSubmit}>
               <ModalHeader className="flex flex-col gap-1">
                 Nuevo Proyecto
               </ModalHeader>

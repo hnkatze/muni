@@ -40,5 +40,26 @@
     "descripcion": "Proyecto de limpieza de cunetas para mejorar el drenaje y prevenir inundaciones.",
     "zonas": "Bonito Oriental, Carbonales",
     "enlace": "http://example.com/fotografias/limpieza-cunetas"
+  },
+  {
+    "id": "c61e0d54-a4d1-4e3e-9c40-16c2ccbcf357",
+    "titulo": "Calles De Cerdo",
+    "descripcion": "Se repararon algunas carreteras de estas pero no estan en dispocision ",
+    "zonas": "Bonito,Carbonales,Pozo Seco",
+    "enlace": "http//google.com"
+  },
+  {
+    "id": "ef0673e9-d194-463d-bfda-04396d20a3c8",
+    "titulo": "Fotos Del Cabildo",
+    "descripcion": "Ser llevo a cabo un cabildo en la zona de la esperanza",
+    "zonas": "La esperanza",
+    "enlace": "https://drive.google.com/drive/folders/1dfcEY5Ouaft0tw8xbBIZRA3ORVYZHF90?usp=sharing"
+  },
+  {
+    "id": "c377bd32-8c54-4ac1-bb74-2ab112637508",
+    "titulo": "Angie Supervisando",
+    "descripcion": "Angie se presento el dia de hoy a la oficia de desarrollo comunitario para supervisar el avance de la pagina web",
+    "zonas": "Bonito oriental, Las Acasias ",
+    "enlace": "https://www.google.com"
   }
 ]

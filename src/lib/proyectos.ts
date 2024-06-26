@@ -1,4 +1,4 @@
-export const proyectos: Proyecto[] = [
+export const proyectos: IPost[] = [
   {
     titulo: "Mantenimiento y Reparación de Calles",
     descripcion:

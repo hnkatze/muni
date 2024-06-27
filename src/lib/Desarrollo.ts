@@ -8,4 +8,5 @@ export const SOLICITUD_DE_AYUDAS = [
   "Fotocopia de cédula de identidad",
   "Fotografias de La Causa de la Ayuda",
   "Solicitud de Ayuda Escrita y Firmada a Mano",
+  "Sellada por el Patronato o Institución(En caso de ser necesario)",
 ];

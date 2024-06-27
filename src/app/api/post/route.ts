@@ -4,7 +4,7 @@ import path from "path";
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), "public", "post.json");
+    const filePath = path.join(process.cwd(), "data", "post.json");
     let existingData = [];
     if (await fs.pathExists(filePath)) {
       existingData = await fs.readJson(filePath);
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   if (req.method === "POST") {
     try {
       const newData = await req.json();
-      const filePath = path.join(process.cwd(), "public", "post.json");
+      const filePath = path.join(process.cwd(), "data", "post.json");
 
       let existingData = [];
       if (await fs.pathExists(filePath)) {
@@ -45,7 +45,7 @@ export async function DELETE(req: NextRequest) {
   if (req.method === "DELETE") {
     try {
       const newData = await req.json();
-      const filePath = path.join(process.cwd(), "public", "post.json");
+      const filePath = path.join(process.cwd(), "data", "post.json");
 
       let existingData = [];
       if (await fs.pathExists(filePath)) {

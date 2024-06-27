@@ -7,13 +7,6 @@
     "enlace": "http://example.com/fotografias/mantenimiento-y-reparacion-calles"
   },
   {
-    "id": "sdssd",
-    "titulo": "Construcción de Parques Públicos",
-    "descripcion": "Proyecto para la construcción de nuevos parques públicos en diferentes zonas del municipio, proporcionando espacios verdes y recreativos para la comunidad.",
-    "zonas": "Bonito Oriental, Carbonales, Corocito, La Canada",
-    "enlace": "http://example.com/fotografias/construccion-parques"
-  },
-  {
     "id": "sdssaad",
     "titulo": "Electrificación",
     "descripcion": "Proyecto de electrificación para mejorar el suministro eléctrico en las comunidades.",
@@ -40,5 +33,12 @@
     "descripcion": "Proyecto de limpieza de cunetas para mejorar el drenaje y prevenir inundaciones.",
     "zonas": "Bonito Oriental, Carbonales",
     "enlace": "http://example.com/fotografias/limpieza-cunetas"
+  },
+  {
+    "id": "ef0673e9-d194-463d-bfda-04396d20a3c8",
+    "titulo": "Fotos Del Cabildo",
+    "descripcion": "Ser llevo a cabo un cabildo en la zona de la esperanza",
+    "zonas": "La esperanza",
+    "enlace": "https://drive.google.com/drive/folders/1dfcEY5Ouaft0tw8xbBIZRA3ORVYZHF90?usp=sharing"
   }
 ]

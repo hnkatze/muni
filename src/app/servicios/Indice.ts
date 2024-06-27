@@ -28,7 +28,14 @@ import {
   TRANSPORTE_DE_QUESO,
   TRASPASO_DE_HERRAR,
 } from "@/lib/Justicia";
-import { REQUISITOS_PARA_MATRIMONIO, REQUISITOS_PARA_PATRONATO_Y_JUNTAS_DE_AGUA } from "@/lib/Secretaria";
+import {
+  REQUISITOS_PARA_MATRIMONIO,
+  REQUISITOS_PARA_PATRONATO_Y_JUNTAS_DE_AGUA,
+} from "@/lib/Secretaria";
+import {
+  REQUISITO_SOLICITAR_CARNET_AUXILIAR,
+  SOLICITUD_DE_AYUDAS,
+} from "@/lib/Desarrollo";
 export const Catastro = [
   {
     title: "Constancias Catastrales",
@@ -132,14 +139,23 @@ export const Justicia = [
   },
 ];
 export const Secretaria = [
-    {
-        title: "Requisitos para Matrimonio",
-        Requisitos: REQUISITOS_PARA_MATRIMONIO,
-    },
-    {
-        title: "Requisitos para Patronato y Juntas de Agua",
-        Requisitos: REQUISITOS_PARA_PATRONATO_Y_JUNTAS_DE_AGUA,
-    }
+  {
+    title: "Requisitos para Matrimonio",
+    Requisitos: REQUISITOS_PARA_MATRIMONIO,
+  },
+  {
+    title: "Requisitos para Patronato y Juntas de Agua",
+    Requisitos: REQUISITOS_PARA_PATRONATO_Y_JUNTAS_DE_AGUA,
+  },
 ];
 
-
+export const Desarrollo = [
+  {
+    title: "Solicitud de Carnet de Auxiliar",
+    Requisitos: REQUISITO_SOLICITAR_CARNET_AUXILIAR,
+  },
+  {
+    title: "Solicitud de Ayudas",
+    Requisitos: SOLICITUD_DE_AYUDAS,
+  },
+];

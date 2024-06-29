@@ -1,7 +1,6 @@
 import prisma from "@/config/db";
 import { NextRequest, NextResponse } from "next/server";
 
-
 export async function GET() {
   try {
     const existingData = await prisma.iPost.findMany();
@@ -14,8 +13,8 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   if (req.method === "POST") {
     try {
-      const newData:IPostId = await req.json();
-     const data = await prisma.iPost.create({
+      const newData: IPostId = await req.json();
+      const data = await prisma.iPost.create({
         data: {
           id: newData.id,
           titulo: newData.titulo,
@@ -26,11 +25,10 @@ export async function POST(req: NextRequest) {
       });
       return new NextResponse(JSON.stringify(data.id), { status: 201 });
     } catch (error) {
-      console.log("Error writing data file: " + error);
       return new Response("Error writing data file: " + error, { status: 500 });
     }
   } else {
-    return new Response(`Method ${req.method} Not Allowed`, { status: 405 }); 
+    return new Response(`Method ${req.method} Not Allowed`, { status: 405 });
   }
 }
 
@@ -48,7 +46,6 @@ export async function DELETE(req: NextRequest) {
         { status: 200 }
       );
     } catch (error) {
-      console.log("Error deleting data file: " + error);
       return new Response("Error deleting data file: " + error, {
         status: 500,
       });

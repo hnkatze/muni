@@ -48,56 +48,54 @@ export default function ModalCreateIPost() {
       if (!result.ok) {
         onClose();
       }
-    } catch (error) {
-      console.error("Error updating data:", error);
-    }
+    } catch (error) {}
   };
 
   return (
     <>
-      <Button onPress={onOpen} color="primary">
+      <Button onPress={onOpen} color='primary'>
         Agregar Proyecto
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top-center'>
         <ModalContent>
           {(onClose) => (
             <form onSubmit={handleSubmit}>
-              <ModalHeader className="flex flex-col gap-1">
+              <ModalHeader className='flex flex-col gap-1'>
                 Nuevo Proyecto
               </ModalHeader>
               <ModalBody>
                 <Input
-                  placeholder="Nombre del proyecto"
-                  className="h-11 bg-gray-700 text-white"
+                  placeholder='Nombre del proyecto'
+                  className='h-11 bg-gray-700 text-white'
                   onChange={handleChange}
-                  name="titulo"
+                  name='titulo'
                 />
                 <Textarea
-                  placeholder="Descripcion... "
-                  className=" bg-gray-700 text-white"
+                  placeholder='Descripcion... '
+                  className=' bg-gray-700 text-white'
                   onChange={(e) =>
                     setForm({ ...form, descripcion: e.target.value })
                   }
-                  name="descripcion"
+                  name='descripcion'
                 />
                 <Input
-                  placeholder="Zonas Ejem.... carbonales,la jua.."
-                  className="h-11 bg-gray-700 text-white"
+                  placeholder='Zonas Ejem.... carbonales,la jua..'
+                  className='h-11 bg-gray-700 text-white'
                   onChange={handleChange}
-                  name="zonas"
+                  name='zonas'
                 />
                 <Input
-                  placeholder="Enlace de la carpeta"
-                  className="h-11 bg-gray-700 text-white"
+                  placeholder='Enlace de la carpeta'
+                  className='h-11 bg-gray-700 text-white'
                   onChange={handleChange}
-                  name="enlace"
+                  name='enlace'
                 />
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="flat" onPress={onClose}>
+                <Button color='danger' variant='flat' onPress={onClose}>
                   Cerrar
                 </Button>
-                <Button color="primary" type="submit">
+                <Button color='primary' type='submit'>
                   Agregar
                 </Button>
               </ModalFooter>

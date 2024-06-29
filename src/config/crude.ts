@@ -10,7 +10,6 @@ import {
   QueryDocumentSnapshot,
 } from "firebase/firestore";
 
-
 //create a get image function with return a promise IHero[]
 export const getUrl = async (folder: string): Promise<IHero[]> => {
   const storageRef = ref(firebaseStorage, folder);
@@ -24,7 +23,7 @@ export const getUrl = async (folder: string): Promise<IHero[]> => {
 //create a function to create a new ContactData in the database
 export const createContact = async (contact: ContactData): Promise<void> => {
   try {
-await addDoc(collection(Data, "contacts"), contact);
+    await addDoc(collection(Data, "contacts"), contact);
   } catch (e) {
     throw e;
   }
@@ -40,7 +39,6 @@ export const getContacts = async (): Promise<ContactDataWithId[]> => {
     });
     return contacts;
   } catch (error) {
-    console.error("Error getting documents: ", error);
     throw error;
   }
 };
@@ -49,14 +47,13 @@ export const deleteContact = async (id: string): Promise<void> => {
   try {
     await deleteDoc(doc(Data, "contacts", id));
   } catch (error) {
-    console.error("Error removing document: ", error);
     throw error;
   }
 };
 //create a function to create a new IPost in the database
 export const createPost = async (post: Proyecto): Promise<void> => {
   try {
-  await addDoc(collection(Data, "posts"), post);
+    await addDoc(collection(Data, "posts"), post);
   } catch (e) {
     throw e;
   }
@@ -72,7 +69,6 @@ export const getPosts = async (): Promise<IPostId[]> => {
     });
     return posts;
   } catch (error) {
-    console.error("Error getting documents: ", error);
     throw error;
   }
 };
@@ -81,8 +77,6 @@ export const deletePost = async (id: string): Promise<void> => {
   try {
     await deleteDoc(doc(Data, "posts", id));
   } catch (error) {
-    console.error("Error removing document: ", error);
     throw error;
   }
 };
-

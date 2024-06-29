@@ -18,7 +18,6 @@ export async function getContacts(): Promise<ContactDataWithId[]> {
     const contacts = await getContacts();
     return contacts;
   } catch (error) {
-    console.error("Error getting documents: ", error);
     throw error;
   }
 }

@@ -19,21 +19,20 @@ export default function CardH({
   alt: string;
   name: string;
 }) {
-  console.log(srcs);
   return (
-    <Card className="py-4 flex flex-col justify-center items-center">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-large text-center">{name}</h4>
+    <Card className='py-4 flex flex-col justify-center items-center'>
+      <CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
+        <h4 className='font-bold text-large text-center'>{name}</h4>
       </CardHeader>
-      <CardBody className="overflow-visible py-2 flex-col justify-center">
-        <div className="relative w-[250px] h-[270px] flex justify-center items-center">
+      <CardBody className='overflow-visible py-2 flex-col justify-center'>
+        <div className='relative w-[250px] h-[270px] flex justify-center items-center'>
           <Image
             alt={alt}
             style={{
               objectFit: "cover",
               objectPosition: "center",
             }}
-            className="rounded-lg"
+            className='rounded-lg'
             src={srcs}
             width={200}
             height={240}
@@ -43,10 +42,9 @@ export default function CardH({
       <CardFooter>
         <Link href={srcs} download>
           <Button
-            color="primary"
-            variant="faded"
-            startContent={<DownloadOutlined />}
-          >
+            color='primary'
+            variant='faded'
+            startContent={<DownloadOutlined />}>
             Descargar
           </Button>
         </Link>

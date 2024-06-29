@@ -74,7 +74,7 @@ export function History() {
             color='primary'
             variant='ghost'
             startContent={<ArrowDownOutlined />}>
-            <span className='ml-2'>Descargar Historia</span>
+            <span className='ml-2'>Descargar Historia Municipal</span>
           </Button>
         </a>
       </div>

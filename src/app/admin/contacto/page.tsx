@@ -61,7 +61,7 @@ export default function Contacto() {
   return (
     <main className='flex flex-col gap-10 w-full justify-center items-center'>
       <div className='text-center my-11 gap-1'>
-        <h1 className='text-3xl md:text-5xl uppercase '>
+        <h1 className='text-3xl md:text-5xl uppercase mb-10 '>
           Panel De Solicitudes Y Proyectos
         </h1>
         <ModalCreateIPost />
